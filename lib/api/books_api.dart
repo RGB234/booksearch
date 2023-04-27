@@ -5,8 +5,8 @@ import 'package:http/http.dart' as http;
 
 class Books_Api {
   // CORS required!!!
-  static const String baseUrl =
-      "https://port-0-book-api-3zspi2nlgabdoxu.sel3.cloudtype.app";
+  static const String baseUrl = "http://localhost:3000";
+  // "https://port-0-book-api-3zspi2nlgabdoxu.sel3.cloudtype.app";
 
   static Future<List<BookModel>> getSearchResults(String keyword) async {
     List<BookModel> bookInstances = [];
