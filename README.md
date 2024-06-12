@@ -1,16 +1,10 @@
 # booksearch
+DockerHub image repository: https://hub.docker.com/repository/docker/rgb234/book_search/general <br></br>
 
-A new Flutter project.
+This project was created to simulate a client-server architecture operating on a container environment. \
+client : booksearch (flutter) , server : book_api (https://github.com/RGB234/book_api) (express.js) \
 
-## Getting Started
+the Books_Api class (lib/api/books_api.dart) sends HTTP request to the server (server source code : https://github.com/RGB234/book_api) \
 
-This project is a starting point for a Flutter application.
+<img src="https://github.com/RGB234/booksearch/assets/67996767/90c2e340-27cd-4ef5-a52a-2c09474baf8d" width="50%" height="50%">
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
