@@ -2,10 +2,10 @@
 
 DockerHub image repository: https://hub.docker.com/repository/docker/rgb234/book_search/general <br></br>
 
-This project was created to simulate a client-server architecture operating on a container environment. \
-client : booksearch (flutter) , server : book_api (https://github.com/RGB234/book_api) (express.js) \
+This project was created to simulate a client-server architecture operating on a container environment.  
+client : booksearch (https://github.com/RGB234/booksearch) (flutter) , server : book_api (https://github.com/RGB234/book_api) (express.js)  
 
-the Books_Api class (lib/api/books_api.dart) sends HTTP request to the server (server source code : https://github.com/RGB234/book_api) \
+the Books_Api class (lib/api/books_api.dart) sends HTTP request to the server (server source code : https://github.com/RGB234/book_api)  
 
 ## How to run the server and clients
 
