@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  labels:
+    name: book-search-app
+spec:
+  hostname: frontend
+  subdomain: book-search
+  containers:
+  - name: frontend
+    image: rgb234/book_search:k8s-pod-0.0.2
+    ports:
+      - containerPort: 5000
+        name: frontend-port
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend
+  labels:
+    name: book-search-app
+spec:
+  hostname: backend
+  subdomain: book-search
+  containers:
+  - name: backend
+    image: rgb234/book_api:0.0.1
+    ports:
+      - containerPort: 3000
+        name: backend-port
