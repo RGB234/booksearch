@@ -2,6 +2,7 @@
 class BookModel {
   final String title, author, publisher, description, link, image, isbn;
 
+  // named constructor
   BookModel.fromJson(Map<String, dynamic> json)
       : title = json['title'],
         author = json['author'],

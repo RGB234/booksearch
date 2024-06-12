@@ -20,9 +20,10 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: EasySearchBar(
-        onSearch: (value) => setState(() => {
-              books = Books_Api.getSearchResults(value),
-            }),
+        onSearch: (value) {
+          books = Books_Api.getSearchResults(value);
+          setState(() {});
+        },
         title: const Text(
           "Books",
           style: TextStyle(
@@ -46,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               );
             }
+            // 아직 books 를 불러오고 있다면 -> 화면중앙에 '대기중' 표시
             return const Center(
               child: CircularProgressIndicator(),
             );
@@ -53,6 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+// makeList 위젯
   GridView makeList(AsyncSnapshot<List<BookModel>> snapshot) {
     return GridView.builder(
       // scrollDirection: Axis.vertical,

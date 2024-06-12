@@ -1,6 +1,8 @@
+# <references>
 # https://github.com/edwardinubuntu/flutter-web-dockerfile/blob/master/Dockerfile
 # https://blog.logrocket.com/containerizing-flutter-web-apps-with-docker/
-#Stage 1 - Install dependencies and build the app
+
+# Stage 1 - Install dependencies and build the app
 FROM debian:11.6 AS build-env
 
 # Install flutter dependencies
@@ -10,8 +12,9 @@ RUN apt-get clean
 # Clone the flutter repo
 RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
 
-# Set flutter path
 # RUN /usr/local/flutter/bin/flutter doctor -v
+
+# setup the flutter path as an enviromental variable
 ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
 
 # Run flutter doctor
@@ -25,6 +28,13 @@ RUN flutter config --enable-web
 RUN mkdir /app/
 COPY . /app/
 WORKDIR /app/
+
+# environment variable
+# pass the environment value(API_URL) when the image is built
+# ARG API_URL
+# ENV API_URL=${API_URL}
+# RUN flutter build web --web-renderer html --dart-define K8SNODE_IP_ADDRESS=${API_URL:-"localhost"}
+
 RUN flutter build web --web-renderer html
 
 # Record the exposed port

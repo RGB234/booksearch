@@ -22,6 +22,7 @@ class Book extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
+            // onTap 시 DetailScreen 으로 네비게이팅
             builder: (context) => DetailScreen(
               title: title,
               author: author,

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# export K8SNODE_IP_ADDRESS="$(kubectl get nodes --selector=kubernetes.io/role!=master -o jsonpath={.items[*].status.addresses[?\(@.type==\"InternalIP\"\)].address})"
+
 # Set the port
 PORT=5000
 
